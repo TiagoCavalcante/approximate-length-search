@@ -44,17 +44,14 @@ pub fn approximate_length_search(
           queue.push_back(neighbor);
         }
       } else if neighbor == end {
-				println!("here");
         if closer_to(
           distance[current] + 1,
           distance[neighbor],
           length,
         ) {
-					println!("{}", distance[current] + 1);
           distance[neighbor] = distance[current] + 1;
           predecessors[neighbor] = current;
         } else {
-					println!("bad?");
           break;
         }
       }
@@ -66,14 +63,12 @@ pub fn approximate_length_search(
     let mut current = end;
     while current != usize::MAX {
       path.push(current);
-			current = predecessors[current];
+      current = predecessors[current];
     }
-
-		println!("{:?}", distance);
 
     path.reverse();
 
-		Some(path)
+    Some(path)
   } else {
     None
   }

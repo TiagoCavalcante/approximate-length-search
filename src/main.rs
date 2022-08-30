@@ -15,12 +15,14 @@ fn main() {
   graph.fill(0.01);
   println!("Fill the graph - {:.2?}", now.elapsed());
 
-  println!("{}", graph.density());
-
   let now = Instant::now();
-  let path =
-    path::approximate_length_search(&graph, start, end, length);
-  println!("Approximate length search - {:.2?}", now.elapsed());
+  let path = path::approximate_length_search(
+    &graph, start, end, length,
+  );
+  println!(
+    "Approximate length search - {:.2?}",
+    now.elapsed()
+  );
 
   // Test if the path is valid.
   if let Some(path) = path {
