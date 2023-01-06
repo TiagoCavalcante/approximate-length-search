@@ -2,6 +2,8 @@
 name = "approximate-length-search"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Find a path with a (bad) approximated length as fast as a BFS"
 
 [dependencies]
 graphs = { git = "https://github.com/TiagoCavalcante/graphs", tag = "0.3.1" }
